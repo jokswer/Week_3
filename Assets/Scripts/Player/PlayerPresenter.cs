@@ -19,7 +19,7 @@ namespace Player
 
         public void FixedUpdate()
         {
-            _playerView.AddForce(_playerModel.VerticalSpeed, _playerModel.HorizontalSpeed);
+            _playerView.AddForce(_playerModel.VerticalForce, _playerModel.HorizontalForce);
         }
 
         public void OnEnable()

@@ -5,17 +5,18 @@ namespace Player
     public class PlayerModel
     {
         private const float MaxAngle = 25f;
+        
         private PlayerInput _playerInput;
-        private float _speed;
+        private float _force;
         private float _angle;
 
-        public float HorizontalSpeed => _playerInput.Move.x * _speed;
-        public float VerticalSpeed => _playerInput.Move.y * _speed;
+        public float HorizontalForce => _playerInput.Move.x * _force;
+        public float VerticalForce => _playerInput.Move.y * _force;
 
-        public PlayerModel(float speed)
+        public PlayerModel(float force)
         {
             _playerInput = new PlayerInput();
-            _speed = speed;
+            _force = force;
         }
 
         public void OnEnable()

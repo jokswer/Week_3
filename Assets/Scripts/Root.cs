@@ -7,7 +7,7 @@ public class Root : MonoBehaviour
 
     [Header("Player Config")] 
     [SerializeField] private Transform _startPoint;
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _force = 5f;
 
     private PlayerPresenter _playerPresenter;
 
@@ -16,7 +16,7 @@ public class Root : MonoBehaviour
         var playerObject = Instantiate(_playerPrefab, _startPoint.position, Quaternion.identity);
         var playerView = playerObject.GetComponent<PlayerView>();
 
-        var playerModel = new PlayerModel(_speed);
+        var playerModel = new PlayerModel(_force);
         _playerPresenter = new PlayerPresenter(playerView, playerModel);
     }
 
