@@ -155,7 +155,7 @@ MonoBehaviour:
   _playerPrefab: {fileID: 8077551705952820068, guid: c0c1551bcd6e04dce8215e42f8d37f3b,
     type: 3}
   _startPoint: {fileID: 382021080}
-  _force: 50
+  _force: 60
 --- !u!4 &61077355
 Transform:
   m_ObjectHideFlags: 0
@@ -715,6 +715,8 @@ MonoBehaviour:
   _coinPrefab: {fileID: 1360288810318030775, guid: 0a0552a6487e7410294552a481b00724,
     type: 3}
   _bombPrefab: {fileID: 7469523822197409375, guid: 5e15c512cea0e4fb9a1ebe3e75ac8221,
+    type: 3}
+  _rocketPrefab: {fileID: 8040054426613188844, guid: acc0c3620c24b413eba9cba5cbbc5816,
     type: 3}
 --- !u!4 &655419004
 Transform:

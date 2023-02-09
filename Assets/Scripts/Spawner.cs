@@ -15,10 +15,12 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private GameObject _coinPrefab;
     [SerializeField] private GameObject _bombPrefab;
+    [SerializeField] private GameObject _rocketPrefab;
 
     private void Start()
     {
         CreateStaticObjects();
+        CreateRockets();
     }
 
     //TODO:
@@ -46,5 +48,16 @@ public class Spawner : MonoBehaviour
 
             Instantiate(_bombPrefab, new Vector3(x, y, z), quaternion.identity, transform);
         }
+    }
+
+    private void CreateRockets()
+    {
+        var x = _playerStartPoint.position.x;
+        var leftLimit = _leftBorder.position.z;
+        var rightLimit = _rightBorder.position.z;
+        var topLimit = _topBorder.position.y;
+        var bottomLimit = _bottomBorder.position.y;
+
+        Instantiate(_rocketPrefab, new Vector3(x, leftLimit + 10, topLimit + 10), Quaternion.identity, transform);
     }
 }
