@@ -1,7 +1,7 @@
 using Player;
 using UnityEngine;
 
-public class Root : MonoBehaviour
+public class PlayerRoot : MonoBehaviour
 {
     [SerializeField] private GameObject _playerPrefab;
 
