@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1360288809976829616}
   - component: {fileID: 1360288809976829581}
   - component: {fileID: 1360288809976829582}
-  - component: {fileID: 1360288809976829583}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1360288809976829583
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360288809976829617}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0.00000005960466, y: 5.505714e-21, z: -0.00000008940696}
 --- !u!1 &1360288810318030775
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1360288810318030774}
   - component: {fileID: -1150068275077743255}
+  - component: {fileID: 2073239989310000457}
+  - component: {fileID: 8426834010234233533}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -151,3 +131,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 150
+--- !u!114 &2073239989310000457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360288810318030775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535412108c4844e680dddedcf4b9f4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &8426834010234233533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360288810318030775}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027281076, y: 0.51844513, z: 0.5235647}
+  m_Center: {x: 0.005535446, y: -0.008581221, z: -0.0023893714}
