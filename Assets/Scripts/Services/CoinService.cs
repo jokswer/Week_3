@@ -6,7 +6,7 @@ namespace Services
     public class CoinService : Service
     {
         [SerializeField] private TextMeshProUGUI _scoreText;
-        // [SerializeField] private GameObject _winMessage;
+        [SerializeField] private GameObject _winMessage;
 
         private int _coinsCount;
         private int _collectedCoinsCount;
@@ -14,7 +14,7 @@ namespace Services
 
         public override void Init()
         {
-            // _winMessage.SetActive(false);
+            _winMessage.SetActive(false);
 
             _coins = FindObjectsOfType<CoinView>();
             _coinsCount = _coins.Length;
@@ -34,7 +34,7 @@ namespace Services
         {
             if (_coinsCount == _collectedCoinsCount)
             {
-                // _winMessage.SetActive(true);
+                _winMessage.SetActive(true);
             }
         }
 
