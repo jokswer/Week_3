@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,6 +14,7 @@ namespace Services
 
         [SerializeField] private int _coinsCount;
         [SerializeField] private int _bombsCount;
+        [SerializeField] private int _maxRocketsCount = 3;
 
         [SerializeField] private GameObject _coinPrefab;
         [SerializeField] private GameObject _bombPrefab;
@@ -21,10 +23,13 @@ namespace Services
         public override void Init()
         {
             CreateStaticObjects();
-            CreateRockets();
         }
 
-        //TODO:
+        private void Start()
+        {
+            StartCoroutine(CreateRockets());
+        }
+
         private void CreateStaticObjects()
         {
             var x = _playerStartPoint.position.x;
@@ -33,33 +38,36 @@ namespace Services
             var topLimit = _topBorder.position.y;
             var bottomLimit = _bottomBorder.position.y;
 
+            var distance = Mathf.Abs(leftLimit) + Mathf.Abs(rightLimit);
+            var coinsStep = distance / _coinsCount;
+            var bombsStep = distance / _bombsCount;
 
-            for (var i = 0; i < _coinsCount; i++)
+            for (var z = leftLimit; z < rightLimit; z += coinsStep)
             {
-                var z = Random.Range(leftLimit, rightLimit);
                 var y = Random.Range(bottomLimit, topLimit);
-
                 Instantiate(_coinPrefab, new Vector3(x, y, z), Quaternion.identity, transform);
             }
 
-            for (var i = 0; i < _bombsCount; i++)
-            {
-                var z = Random.Range(leftLimit, rightLimit);
-                var y = Random.Range(bottomLimit, topLimit);
 
+            for (var z = leftLimit; z < rightLimit; z += bombsStep)
+            {
+                var y = Random.Range(bottomLimit, topLimit);
                 Instantiate(_bombPrefab, new Vector3(x, y, z), Quaternion.identity, transform);
             }
         }
 
-        private void CreateRockets()
+        private IEnumerator CreateRockets()
         {
             var x = _playerStartPoint.position.x;
-            var leftLimit = _leftBorder.position.z;
-            var rightLimit = _rightBorder.position.z;
-            var topLimit = _topBorder.position.y;
-            var bottomLimit = _bottomBorder.position.y;
+            var z = _leftBorder.position.z - 10;
+            var y = _topBorder.position.y;
 
-            Instantiate(_rocketPrefab, new Vector3(x, leftLimit + 10, topLimit + 10), Quaternion.identity, transform);
+            for (int i = 0; i < _maxRocketsCount; i++)
+            {
+                Instantiate(_rocketPrefab, new Vector3(x, y, z), Quaternion.identity, transform);
+
+                yield return new WaitForSeconds(5f);
+            }
         }
     }
 }
