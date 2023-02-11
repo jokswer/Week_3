@@ -8,6 +8,7 @@ public class PlayerRoot : MonoBehaviour
     [Header("Player Config")] 
     [SerializeField] private Transform _startPoint;
     [SerializeField] private float _force = 5f;
+    [SerializeField] private float _maxHealth = 5f;
 
     private PlayerPresenter _playerPresenter;
 
@@ -16,7 +17,7 @@ public class PlayerRoot : MonoBehaviour
         var playerObject = Instantiate(_playerPrefab, _startPoint.position, Quaternion.identity);
         var playerView = playerObject.GetComponent<PlayerView>();
 
-        var playerModel = new PlayerModel(_force);
+        var playerModel = new PlayerModel(_force, _maxHealth);
         _playerPresenter = new PlayerPresenter(playerView, playerModel);
     }
 

@@ -25,11 +25,13 @@ namespace Player
         public void OnEnable()
         {
             _playerModel.OnEnable();
+            _playerView.OnTakeDamage += _playerModel.Health.SetDamage;
         }
 
         public void OnDisable()
         {
             _playerModel.OnDisable();
+            _playerView.OnTakeDamage -= _playerModel.Health.SetDamage;
         }
     }
 }

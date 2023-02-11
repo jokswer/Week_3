@@ -7,15 +7,18 @@ namespace Player
         private const float MaxAngle = 10f;
         
         private PlayerInput _playerInput;
+        private PlayerHealth _playerHealth;
         private float _force;
         private float _angle;
 
         public float HorizontalForce => _playerInput.Move.x * _force;
         public float VerticalForce => _playerInput.Move.y * _force;
+        public PlayerHealth Health => _playerHealth;
 
-        public PlayerModel(float force)
+        public PlayerModel(float force, float maxHealth)
         {
             _playerInput = new PlayerInput();
+            _playerHealth = new PlayerHealth(maxHealth);
             _force = force;
         }
 

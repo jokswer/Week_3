@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player
@@ -5,11 +7,18 @@ namespace Player
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerView : MonoBehaviour
     {
+        public Action<int> OnTakeDamage;
+
         private Rigidbody _rigidbody;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
+        }
+
+        public void TakeDamage(int damage)
+        {
+            OnTakeDamage?.Invoke(damage);
         }
 
         public void AddForce(float vertical, float horizontal)

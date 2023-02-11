@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7469523822197409374}
   - component: {fileID: -8634885315059421453}
   - component: {fileID: 7755236836090210482}
+  - component: {fileID: -5467608307142119289}
   m_Layer: 0
   m_Name: TNT
   m_TagString: Untagged
@@ -67,6 +68,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.1238184, y: 5.39248, z: 6.4392447}
   m_Center: {x: -0.8923693, y: 0.33147514, z: -0.17013669}
+--- !u!114 &-5467608307142119289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469523822197409375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b32b8e010ad451dac645ab53673942a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 2
 --- !u!1001 &7469523821467110753
 PrefabInstance:
   m_ObjectHideFlags: 0

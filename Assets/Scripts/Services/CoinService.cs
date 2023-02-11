@@ -11,13 +11,12 @@ namespace Services
         private int _coinsCount;
         private int _collectedCoinsCount;
         private CoinView[] _coins;
-        
+
         public override void Init()
         {
             // _winMessage.SetActive(false);
 
             _coins = FindObjectsOfType<CoinView>();
-            Debug.Log(_coins.Length);
             _coinsCount = _coins.Length;
 
             ChangeScoreText();
