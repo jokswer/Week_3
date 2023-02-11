@@ -15,7 +15,7 @@ namespace Player
         public float VerticalForce => _playerInput.Move.y * _force;
         public PlayerHealth Health => _playerHealth;
 
-        public PlayerModel(float force, float maxHealth)
+        public PlayerModel(float force, int maxHealth)
         {
             _playerInput = new PlayerInput();
             _playerHealth = new PlayerHealth(maxHealth);
@@ -40,7 +40,7 @@ namespace Player
             }
             else
             {
-                _angle += _angle > 0 ? -0.5f : 0.5f;
+                _angle += _angle > 0 ? -0.3f : 0.3f;
             }
 
             _angle = Mathf.Clamp(_angle, -MaxAngle, MaxAngle);

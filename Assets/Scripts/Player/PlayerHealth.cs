@@ -1,15 +1,14 @@
-using UnityEngine;
+using System;
 
 namespace Player
 {
     public class PlayerHealth
     {
-        private float _health;
+        private int _health;
 
-        public float CurrentHealth => _health;
-        public bool IsAlive => _health > 1;
+        public Action<int> OnHealthChange;
 
-        public PlayerHealth(float maxHealth)
+        public PlayerHealth(int maxHealth)
         {
             _health = maxHealth;
         }
@@ -17,8 +16,7 @@ namespace Player
         public void SetDamage(int damage = 1)
         {
             _health -= damage;
-            Debug.Log(CurrentHealth);
-            Debug.Log(IsAlive);
+            OnHealthChange?.Invoke(_health);
         }
     }
 }
