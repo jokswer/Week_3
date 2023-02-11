@@ -6,12 +6,13 @@ public class DestroyBomb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            DestroyObject();
+            Destroy(gameObject);
         }
-    }
 
-    public void DestroyObject()
-    {
-        Destroy(gameObject);
+        if (other.CompareTag("Bomb"))
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
     }
 }
