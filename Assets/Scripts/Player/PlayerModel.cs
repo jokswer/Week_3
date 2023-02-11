@@ -5,7 +5,7 @@ namespace Player
     public class PlayerModel
     {
         private const float MaxAngle = 10f;
-        
+
         private PlayerInput _playerInput;
         private PlayerHealth _playerHealth;
         private float _force;

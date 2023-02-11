@@ -23,7 +23,7 @@ public class PlayerRoot : MonoBehaviour
 
         _playerModel = new PlayerModel(_force, _maxHealth);
         _playerPresenter = new PlayerPresenter(playerView, _playerModel);
-        
+
         _healthService.ChangeHealthText(_maxHealth);
     }
 

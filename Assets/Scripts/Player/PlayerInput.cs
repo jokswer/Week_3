@@ -5,7 +5,7 @@ namespace Player
     public class PlayerInput
     {
         private InputActions _inputActions;
-        
+
         public Vector2 Move => _inputActions.Player.Move.ReadValue<Vector2>().normalized;
 
         public PlayerInput()

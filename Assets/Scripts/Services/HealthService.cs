@@ -7,12 +7,12 @@ namespace Services
     {
         [SerializeField] private TextMeshProUGUI _healthCount;
         [SerializeField] private GameObject _deathMessage;
-        
+
         public override void Init()
         {
             _deathMessage.SetActive(false);
         }
-        
+
         public void ChangeHealthText(int health)
         {
             if (health < 1)
@@ -21,7 +21,7 @@ namespace Services
                 _healthCount.text = $"Очки здоровья: 0";
                 return;
             }
-            
+
             _healthCount.text = $"Очки здоровья: {health}";
         }
     }

@@ -62,7 +62,7 @@ namespace Services
             var z = _leftBorder.position.z - 10;
             var y = _topBorder.position.y;
 
-            for (int i = 0; i < _maxRocketsCount; i++)
+            for (var i = 0; i < _maxRocketsCount; i++)
             {
                 Instantiate(_rocketPrefab, new Vector3(x, y, z), Quaternion.identity, transform);
 
