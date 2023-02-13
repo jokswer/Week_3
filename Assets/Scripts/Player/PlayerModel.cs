@@ -5,6 +5,7 @@ namespace Player
     public class PlayerModel
     {
         private const float MaxAngle = 10f;
+        private const float RotationLerpRate = 10f;
 
         private PlayerInput _playerInput;
         private PlayerHealth _playerHealth;
@@ -34,16 +35,9 @@ namespace Player
 
         public float GetAngle()
         {
-            if (_playerInput.Move.x != 0)
-            {
-                _angle += _playerInput.Move.x;
-            }
-            else
-            {
-                _angle += _angle > 0 ? -0.3f : 0.3f;
-            }
+            var targetAngel = _playerInput.Move.x * MaxAngle;
 
-            _angle = Mathf.Clamp(_angle, -MaxAngle, MaxAngle);
+            _angle = Mathf.Lerp(_angle, targetAngel, RotationLerpRate * Time.deltaTime);
 
             return _angle;
         }
