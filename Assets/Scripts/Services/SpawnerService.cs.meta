@@ -1,3 +1,22 @@
 fileFormatVersion: 2
 guid: fb6901e6a21249eb9bbebcddd18a18da
-timeCreated: 1675866613
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _playerStartPoint: {instanceID: 0}
+  - _leftBorder: {instanceID: 0}
+  - _rightBorder: {instanceID: 0}
+  - _topBorder: {instanceID: 0}
+  - _bottomBorder: {instanceID: 0}
+  - _coinPrefab: {fileID: 1360288810318030775, guid: 0a0552a6487e7410294552a481b00724,
+      type: 3}
+  - _bombPrefab: {fileID: 7469523822197409375, guid: 5e15c512cea0e4fb9a1ebe3e75ac8221,
+      type: 3}
+  - _rocketPrefab: {fileID: 8040054426613188844, guid: acc0c3620c24b413eba9cba5cbbc5816,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
